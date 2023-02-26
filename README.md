@@ -120,7 +120,7 @@ The members of the `trait`'s were not defined yet.
 
 Moreover some members that could have been added as defined members to the `trait`'s were not added yet.
 
-### Adding some defined member to `Function`
+### Adding defined `` `z>-->z` `` member to `Function`
 
 ```scala
 package psbp.specification.function
