@@ -120,6 +120,8 @@ The members of the `trait`'s were not defined yet.
 
 Moreover some members that could have been added as defined members to the `trait`'s were not added yet.
 
+## Content
+
 ### Adding defined member `` `z>-->z` `` to `Function`
 
 ```scala
@@ -281,8 +283,7 @@ private[psbp] trait Algorithm[>-->[-_, +_], &&[+_, +_]]
       SequentialComposition[>-->]
 ```
 
+## Conclusion
 
-
-
-
+We have defined some `trait` members in terms of other ones other ones.
 
