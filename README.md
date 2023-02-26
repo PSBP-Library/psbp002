@@ -30,7 +30,7 @@ private[psbp] trait Function[>-->[-_, +_], &&[+_, +_]]:
 and
 
 ```scala
-trait Algorithm[>-->[-_, +_], &&[+_, +_]]
+private[psbp] trait Algorithm[>-->[-_, +_], &&[+_, +_]]
     extends IfThenElse[>-->],
       LocalDefinition[>-->, &&],
       SequentialComposition[>-->]
@@ -116,7 +116,7 @@ private[psbp] trait Product[>-->[-_, +_], &&[+_, +_]]:
   // ...
 ```
 
-The declared members of the `trait`'s were not defined yet.
+The members of the `trait`'s were not defined yet.
 
 Moreover some members that could have been added as defined members to the `trait`'s were not added yet.
 
@@ -140,7 +140,7 @@ private[psbp] trait Function[>-->[-_, +_], &&[+_, +_]]:
 
 On its own member `` `z>-->z` `` is not useful.
 
-As part of the definition of members of `trait`'s it will turn out to useful.
+`` `z>-->z` `` will turn out to useful for defining of members of `trait`'s .
 
 ### Defining some members in `Product`
 
@@ -186,7 +186,7 @@ private[psbp] trait Product[>-->[-_, +_]: SequentialComposition, &&[+_, +_]]:
   // ...
 ```
 
-Some members can be defined in terms of members of `SequentialComposition` and members of `Product` itself.
+Some members can be defined in terms of members of `SequentialComposition` and simpler members of `Product` itself.
 
 ### Defining `Let` in `LocalDefinition`
 
@@ -221,14 +221,14 @@ private[psbp] trait LocalDefinition[
     def In(`(z&&y)>-->x`: => (Z && Y) >--> X): Z >--> X
 ```
 
-Members `Let` can be defined in terms of members of `Function`, `SequentialComposition` and `Product`.
+Member `Let` can be defined in terms of members of `Function`, `SequentialComposition` and `Product`.
 
 Most notably member `` `z>-->z` `` of `Function` is used.
 
 ### Defining `If` in `IfThenElse`
 
 Member `If` in `IfThenElse` can be defined in terms of member `Let` of `LocalDefinition` and a newly added declared 
-member `or` of `IfThenElse` itself.
+member `Or` of `IfThenElse` itself.
 
 ```scala
 package psbp.specification.algorithm
@@ -252,13 +252,13 @@ private[psbp] trait IfThenElse[
             Let {
               `z>-->b`
             } In {
-              `z>-t->y` or `z>-f->y`
+              `z>-t->y` Or `z>-f->y`
             }
 
   // internal declared
 
   extension [Z, Y](`z>-t->y`: => Z >--> Y)
-    private[psbp] def or(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y
+    private[psbp] def Or(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y
 
   private[psbp] trait Then[Z, Y]:
     def Then(`z>-t->y`: => Z >--> Y): Else[Z, Y]
