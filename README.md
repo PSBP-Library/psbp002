@@ -120,7 +120,7 @@ The members of the `trait`'s were not defined yet.
 
 Moreover some members that could have been added as defined members to the `trait`'s were not added yet.
 
-### Adding defined `` `z>-->z` `` member to `Function`
+### Adding defined member `` `z>-->z` `` to `Function`
 
 ```scala
 package psbp.specification.function
@@ -188,7 +188,7 @@ private[psbp] trait Product[>-->[-_, +_]: SequentialComposition, &&[+_, +_]]:
 
 Some members can be defined in terms of members of `SequentialComposition` and simpler members of `Product` itself.
 
-### Defining `Let` in `LocalDefinition`
+### Defining member `Let` in `LocalDefinition`
 
 ```scala
 package psbp.specification.algorithm
@@ -225,7 +225,7 @@ Member `Let` can be defined in terms of members of `Function`, `SequentialCompos
 
 Most notably member `` `z>-->z` `` of `Function` is used.
 
-### Defining `If` in `IfThenElse`
+### Defining member `If` in `IfThenElse`
 
 Member `If` in `IfThenElse` can be defined in terms of member `Let` of `LocalDefinition` and a newly added declared 
 member `Or` of `IfThenElse` itself.
@@ -266,6 +266,9 @@ private[psbp] trait IfThenElse[
   private[psbp] trait Else[Z, Y]:
     def Else(`z>-f->y`: => Z >--> Y): Z >--> Y
 ```
+
+### Updating `Algorithm`
+
 
 `IfThenElse` now has an extra argument `&&` and therefore `Algorithm` needs to be updated accordingly.
 
