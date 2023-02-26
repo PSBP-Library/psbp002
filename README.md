@@ -74,7 +74,7 @@ and where
 ```scala
 private[psbp] trait SequentialComposition[>-->[-_, +_]]:
 
-  // external defined
+  // external declared
 
   extension [Z, Y, X](`z>-->y`: Z >--> Y) def >-->(`y>-->x`: => Y >--> X): Z >--> X
 ```
