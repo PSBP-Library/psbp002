@@ -285,5 +285,5 @@ private[psbp] trait Algorithm[>-->[-_, +_], &&[+_, +_]]
 
 ## Conclusion
 
-We have defined some `trait` members in terms of other ones other ones.
+We have defined some `trait` members in terms of other ones.
 
