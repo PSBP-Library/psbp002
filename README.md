@@ -41,7 +41,7 @@ where
 ```scala
 private[psbp] trait IfThenElse[>-->[-_, +_]]:
 
-  // external defined
+  // external declared
 
   def If[Z, Y](`z>-->b`: Z >--> Boolean): Then[Z, Y]
 
@@ -59,7 +59,7 @@ and where
 ```scala
 private[psbp] trait LocalDefinition[>-->[-_, +_], &&[+_, +_]]:
 
-  // external defined
+  // external declared
 
   def Let[Z, Y, X](`z>-->y`: Z >--> Y): In[Z, Y, X]
 
