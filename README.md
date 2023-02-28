@@ -150,7 +150,7 @@ private[psbp] trait Function[>-->[-_, +_], &&[+_, +_]]:
 
 On its own member `` `z>-->z` `` is not useful.
 
-`` `z>-->z` `` will turn out to useful for defining of members of `trait`'s .
+`` `z>-->z` `` will turn out to useful for defining members of `trait`'s .
 
 ### Defining some members in `Product`
 
@@ -196,7 +196,7 @@ private[psbp] trait Product[>-->[-_, +_]: SequentialComposition, &&[+_, +_]]:
   // ...
 ```
 
-Some members can be defined in terms of members of `SequentialComposition` and simpler members of `Product` itself.
+Some members can be defined in terms of members of `SequentialComposition` and members of `Product` itself.
 
 ### Defining member `Let` in `LocalDefinition`
 
