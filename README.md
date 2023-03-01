@@ -238,7 +238,7 @@ Most notably member `` `z>-->z` `` of `Function` is used.
 ### Defining member `If` in `IfThenElse`
 
 Member `If` in `IfThenElse` can be defined in terms of member `Let` of `LocalDefinition` and a newly added declared 
-member `Or` of `IfThenElse` itself.
+member `OrElse` of `IfThenElse` itself.
 
 ```scala
 package psbp.specification.algorithm
@@ -262,13 +262,13 @@ private[psbp] trait IfThenElse[
             Let {
               `z>-->b`
             } In {
-              `z>-t->y` Or `z>-f->y`
+              `z>-t->y` OrElse `z>-f->y`
             }
 
   // internal declared
 
   extension [Z, Y](`z>-t->y`: => Z >--> Y)
-    private[psbp] def Or(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y
+    private[psbp] def OrElse(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y
 
   private[psbp] trait Then[Z, Y]:
     def Then(`z>-t->y`: => Z >--> Y): Else[Z, Y]
